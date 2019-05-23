@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= leaddetail.business
+  h3= leaddetail.client
+  h3= leaddetail.value
+  h3= leaddetail.phone
+  h3= leaddetail.status
+  a(href='/lead/edit/'+leaddetail._id)
+    button#edit Edit
+  br
+  a(href='#', data-id=leaddetail._id)
+    button#delete Delete

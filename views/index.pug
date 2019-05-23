@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form.form(action='/' method='POST')
+    input#client(type='text' name='client' placeholder='name of client')
+    input#value(type='number' name='value' placeholder='total value' required)
+    input#business(type='text' name='business' placeholder='business name' required)
+    input#phone(type='number' name='phone' placeholder='phone number')
+    select#status(name='status' required)
+      option select status
+      option(value="0x") Lost
+      option(value="00") Lead
+      option(value="01") Interested
+      option(value="02") Paid Advance
+      option(value="03") Delivered
+    button#add(type='submit') &plus;
+
+  table
+    each lead, i in leadlist
+      tr
+        td
+          a(href='/lead/edit/'+lead._id)= lead.client+' ('+lead.value+'/-)'

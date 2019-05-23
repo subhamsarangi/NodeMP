@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 #{title}
+
+  form.form(method='POST' action='/lead/edit/'+leadedit._id)
+    input#client(type='text' name='client' placeholder='name of client' value=leadedit.client)
+    input#value(type='number' name='value' placeholder='total value' required value=leadedit.value)
+    input#business(type='text' name='business' placeholder='business name' required value=leadedit.business)
+    input#phone(type='number' name='phone' placeholder='phone number' value=leadedit.number)
+    select#status(name='status' required value=leadedit.status)
+      option select status
+      option(value="0x") Lost
+      option(value="00") Lead
+      option(value="01") Interested
+      option(value="02") Paid Advance
+      option(value="03") Delivered
+    button#add(type='submit') Update
+  a#delete.btn.btn-danger(href='#', data-id=leadedit._id) Delete

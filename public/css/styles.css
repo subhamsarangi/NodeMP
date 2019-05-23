@@ -1,0 +1,47 @@
+html{
+	position: relative;
+	height: 100%;
+}
+body {
+	font-family: 'Roboto';
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+.link {
+	font-family: 'Roboto';
+	background: #222;
+	color: #fff;
+	display: inline-block;
+	height: 1.4em;
+	line-height: 1.2em;
+	font-size: 1em;
+	margin: 3px 5px;
+	padding: .1em .3em;
+	border-radius: 6px;
+	text-decoration: none;
+}
+.link:hover{
+	color: #fc3;
+	text-decoration: none;
+}
+#add, #client, #value, #edit, #delete{
+	margin-right: 7px;
+	border-radius: 6px;
+	padding: 2px 7px;
+	outline: 0;
+	border-color: transparent;
+	border: 2px solid #aaa;
+}
+#client:focus, #value:focus, #add:hover, #edit:hover, #delete:hover {
+	border-color: #222;
+}
+footer{
+	position:absolute;
+	bottom:0;
+	text-align: center;
+	background: #555;
+	width: 100%;
+	padding: 10px;
+	color: #bbb;
+}

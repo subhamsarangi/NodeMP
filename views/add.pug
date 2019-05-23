@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	h2 #{title}
+	form.form(action='/add' method='POST')
+		input.form-control#client(type='text' name='client' placeholder='name of client' required)
+		input.form-control#business(type='text' placeholder='business name' required)
+		input.form-control#phone(type='number' placeholder='phone number')
+		input.form-control#value(type='number' name='value' placeholder='total estimated value' required)
+		input.form-control#paid(type='number' placeholder='paid amount')
+		select.form-control#status
+			option select status
+			option(value="0x") Lost
+			option(value="00") Lead
+			option(value="01") Interested
+			option(value="02") Paid Advance
+			option(value="03") Delivered
+		label(for='contactdate') Last date of contact 
+		input.form-control#contactdate(type='date')
+		button.btn.btn-primary(type='submit') &plus;
+
+	script document.getElementById('contactdate').valueAsDate = new Date();
